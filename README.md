@@ -50,3 +50,6 @@ Here are the steps to create a bookmarklet from the code:
 6. Name it "Tribe Sniffer" or whatever you like.
 7. Paste the code into the location / URL field.
 8. When visiting a webpage click on the bookmark button. A popup dialog will contain the information.
+
+## Sample screenshot
+![image](https://user-images.githubusercontent.com/2614506/80293451-c7af0380-875f-11ea-9a86-270b167ea58e.png)
