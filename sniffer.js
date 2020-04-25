@@ -1,1 +1,1 @@
-alert('Yeay');
+;(function(){alert('Yeay');});
