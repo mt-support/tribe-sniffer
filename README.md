@@ -48,7 +48,10 @@ This tool is meant to be used as a bookmarklet.
 
 ### Slow deploy
 
-For that you will need to minimize the script. You can use an online tool like https://javascript-minifier.com/
+The non-minified file is a TamperMonkey script. It will run on the websites defined with `@match`.
+Also, the dialog box will pop up on every pageload, which can be annoying. :)
+
+To use it as a bookmarklet you will need to minimize the script. You can use an online tool like https://javascript-minifier.com/
 
 Here are the steps to create a bookmarklet from the code:
 
