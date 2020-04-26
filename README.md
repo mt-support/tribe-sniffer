@@ -38,6 +38,16 @@ The sniffer will check the following attributes on the page:
 ## How to use it
 This tool is meant to be used as a bookmarklet.
 
+### Quick deploy
+
+1. Copy the one-line script from `tribe-sniffer.min.js` to your clipboard.
+2. In your preferred browser create a new bookmark button on the bookmark bar.
+3. Name it "Tribe Sniffer" or whatever you like.
+4. Paste the code into the location / URL field and save it.
+5. When visiting a webpage click on the bookmark button. A popup dialog will contain the information.
+
+### Slow deploy
+
 For that you will need to minimize the script. You can use an online tool like https://javascript-minifier.com/
 
 Here are the steps to create a bookmarklet from the code:
@@ -48,8 +58,11 @@ Here are the steps to create a bookmarklet from the code:
 4. Select the minified code and copy it on your clipboard.
 5. In your preferred browser create a new bookmark button on the bookmark bar.
 6. Name it "Tribe Sniffer" or whatever you like.
-7. Paste the code into the location / URL field.
+7. Paste the code into the location / URL field and save it.
 8. When visiting a webpage click on the bookmark button. A popup dialog will contain the information.
 
 ## Sample screenshot
+
+This is what you will approximately get when clicking the button.
+ 
 ![image](https://user-images.githubusercontent.com/2614506/80293451-c7af0380-875f-11ea-9a86-270b167ea58e.png)
