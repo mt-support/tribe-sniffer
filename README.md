@@ -35,6 +35,7 @@ The sniffer will check the following attributes on the page:
 * W3 Total Cache
 * Hummingbird
 * WP Rocket
+* Endurance Page Cache (BlueHost)
 
 ## How to use it
 This tool is meant to be used as a bookmarklet.
