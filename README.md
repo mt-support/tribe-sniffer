@@ -35,6 +35,8 @@ The sniffer will check the following attributes on the page:
 * W3 Total Cache
 * Hummingbird
 * WP Rocket
+* LiteSpeed Cache
+* Endurance Page Cache
 
 ## How to use it
 This tool is meant to be used as a bookmarklet.
@@ -70,3 +72,14 @@ Here are the steps to create a bookmarklet from the code:
 This is what you will approximately get when clicking the button.
  
 ![image](https://user-images.githubusercontent.com/2614506/80293451-c7af0380-875f-11ea-9a86-270b167ea58e.png)
+
+## Changelog
+
+1.1.0 - 2020-09-17
+* Improved theme detection
+* Improved version number detection to adequately display "not found" when version number is not found
+* Added Endurance Page Cache to the caching plugin list
+* Added LiteSpeed Cache to the caching plugin list
+
+1.0.0 - 2020-04-26
+* Initial release
