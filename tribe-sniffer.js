@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Tribe Sniffer
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1.0
 // @description  try to take over the world!
-// @author       You
+// @author       Andras Guseo
 // @match        https://tec.local/*
 // @exclude      https://tec.local/wp-admin/*
 // @grant        none
@@ -22,10 +22,10 @@
     var links = document.getElementsByTagName('link');
     var prods = ['WordPress','TEC V1', 'TEC V2', 'ECP','Filter Bar','ET','ET+','WooCommerce'];
     var csss = ['wp-block-library-css','tribe-events-calendar-style-css','tribe-events-views-v2-skeleton-css','tribe-events-calendar-pro-style-css','tribe-filterbar-styles-css','event-tickets-tickets-css-css','event-tickets-plus-tickets-css-css','woocommerce-general-css'];
-    var caching = ['WP-Super-Cache','WP Fastest Cache','W3 Total Cache','Hummingbird','WP Rocket'];
+    var caching = ['WP-Super-Cache','WP Fastest Cache','W3 Total Cache','Hummingbird','WP Rocket','Endurance Page Cache','LiteSpeed Cache'];
     var prevSib=document.lastChild.previousSibling.nodeValue;
     var lastChi=document.lastChild.nodeValue;
-    var i,sorc,cacher='not found',theme="couldn't identify";
+    var i,sorc,cacher='not found',theme='';
     var ecsb=document.getElementsByClassName('ecs-event-list');
     var ect=document.getElementById('ect-events-list-content');
 
@@ -48,7 +48,9 @@
             msg+='V1';
         }
     }
+
     msg+="\nShortcode: ";
+
     if(sc.length>0){
         msg+="YES";
     }
@@ -63,7 +65,6 @@
             msg+="NO";
         }
     }
-    msg+='\n------\n';
     for ( i=0; i < links.length; i++) {
         sorc = links[i].getAttribute("href");
         if( sorc != null ) {
@@ -75,19 +76,45 @@
             }
         }
     }
-    msg+="Theme: ";
+
+    msg+="\nTheme: ";
+
     for (i=0; i < res.length; i++) {
-        if(res[i].startsWith("tribe-theme-")) {
+        if(res[i].startsWith("avada-")) {
+            theme= 'Avada';
+            break;
+        }
+        else if(res[i].startsWith("tribe-theme-")) {
             theme= res[i].substr(12);
+            break;
+        }
+        else if(res[i].startsWith("theme-")) {
+            theme= res[i].substr(6);
+            break;
         }
     }
+
+    if(theme==''){
+        for(i=0; i<links.length; i++) {
+            var link=links[i].href.match(/(themes\/).{2,}?(\/)/);
+            if(links[i].href!=undefined && link!=null) {
+                theme= link[0].slice(7,-1);
+                break;
+            }
+        }
+    }
+    if(theme==''){
+        theme= "couldn't identify";
+    }
     msg+=theme;
+
+    msg+='\n------\nVERSIONS:';
 
     for(i=0;i<csss.length;i++) {
         var x=document.getElementById(csss[i]);
         if(x != null) x= x.getAttribute("href");
         msg+="\n"+prods[i]+": "
-        if(x!=null){
+        if(x!=null && x.search("=")>=0){
             msg+= x.substr(x.indexOf("=")+1);
         }
         else{
