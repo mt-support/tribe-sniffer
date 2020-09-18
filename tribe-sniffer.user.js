@@ -60,7 +60,7 @@
             if(ecsb.length>0){
                 msg+="Yes, by 3rd party plugin:\n - The Events Calendar Shortcode & Block";
             }
-            else if(ect!=null && ect.innerHTML.length>0) { {
+            else if(ect!=null && ect.innerHTML.length>0) {
                 msg+="Yes, by 3rd party plugin:\n - The Events Calendar Shortcode and Templates Addon";
             }
             else {
