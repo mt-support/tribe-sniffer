@@ -149,7 +149,7 @@
     buttonContainer.id = 'buttonContainerId';
     document.body.appendChild(buttonContainer);
     document.getElementById('buttonContainerId').innerHTML = '&#128269;';
-    buttonContainer.style = 'position: fixed; bottom: 0; right: 0; font-size: 2em; background-color: #313df5; opacity: 0.5; cursor: pointer;';
+    buttonContainer.style = 'position: fixed; bottom: 0; right: 0; font-size: 2em; background-color: #313df5; opacity: 0.5; cursor: pointer; padding: 0 6px;';
     buttonContainer.onclick = function(){popup()};
 
 })();
