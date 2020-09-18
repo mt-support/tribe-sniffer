@@ -28,7 +28,7 @@
         var prevSib=document.lastChild.previousSibling.nodeValue;
         var lastChi=document.lastChild.nodeValue;
         var i,sorc,cacher='not found',theme='';
-        var ecsb=document.getElementsByClassName('ecs-event-list');
+        var ecsb=document.getElementsByClassName('ecs-events');
         var ect=document.getElementById('ect-events-list-content');
 
         msg = 'Single event view: ';
@@ -58,10 +58,10 @@
         }
         else{
             if(ecsb.length>0){
-                msg+="The Events Calendar Shortcode & Block";
+                msg+="Yes, by 3rd party plugin:\n - The Events Calendar Shortcode & Block";
             }
-            else if(ect!=null) {
-                msg+="The Events Calendar Shortcode and Templates Addon";
+            else if(ect.innerHTML.length>0) {
+                msg+="Yes, by 3rd party plugin:\n - The Events Calendar Shortcode and Templates Addon";
             }
             else {
                 msg+="NO";
